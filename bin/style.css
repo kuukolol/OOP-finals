@@ -1,0 +1,36 @@
+/* Basic styling for the root element */
+.root {
+    -fx-background-color: #121212;
+    -fx-font-family: 'Roboto', sans-serif;
+}
+
+/* Button styling for category buttons */
+.button {
+    -fx-background-color: #ff6347;
+    -fx-text-fill: white;
+    -fx-padding: 15 25;
+    -fx-font-size: 16px;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+}
+
+.button:hover {
+    -fx-background-color: #ff4500;
+    /* Slight hover effect */
+}
+
+/* Text area for order details */
+.text-area {
+    -fx-control-inner-background: #2c2f33;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-border-color: #ff6347;
+    -fx-border-radius: 5px;
+}
+
+/* Label styling */
+.label {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}

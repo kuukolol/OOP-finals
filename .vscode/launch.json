@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "FastFoodApp",
+            "request": "launch",
+            "mainClass": "FastFoodApp",
+            "projectName": "restaurant_388857aa",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-23.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "RestaurantApp",
+            "request": "launch",
+            "mainClass": "RestaurantApp",
+            "projectName": "restaurant_388857aa",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-23.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "restaurant_388857aa"
+        },
+        {
+            "type": "java",
+            "name": "MenuGUI",
+            "request": "launch",
+            "mainClass": "MenuGUI",
+            "projectName": "restaurant_388857aa"
+        }
+    ]
+}

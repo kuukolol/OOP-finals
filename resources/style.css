@@ -1,0 +1,51 @@
+/* Basic Styles */
+* {
+    -fx-font-family: "Arial", sans-serif;
+    -fx-font-size: 14px;
+    -fx-base: #f0f0f0;
+}
+
+.root {
+    -fx-padding: 20px;
+}
+
+/* Title Styling */
+.label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4CAF50;
+}
+
+/* ListView Styling */
+.list-cell {
+    -fx-padding: 10px;
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 5px;
+    -fx-background-insets: 0, 1;
+}
+
+.list-cell:hover {
+    -fx-background-color: #e1e1e1;
+}
+
+/* Button Styling */
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-padding: 10px 20px;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+/* TextArea (Receipt) Styling */
+.text-area {
+    -fx-background-color: #333333;
+    -fx-text-fill: #f0f0f0;
+    -fx-padding: 15px;
+    -fx-font-size: 16px;
+    -fx-border-radius: 5px;
+    -fx-max-height: 200px;
+}
