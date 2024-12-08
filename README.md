@@ -48,7 +48,6 @@ To provide a better understanding of the application's interface and functionali
 
 *Generate and view a detailed receipt upon checkout.*
 
-> **Note**: To include your screenshots, create a `screenshots` folder in the root directory of your project and add your images there. Replace the placeholder image names (e.g., `banner.png`, `main_interface.png`) with your actual screenshot file names.
 
 ## Installation
 
