@@ -73,7 +73,7 @@ public class Checkout {
     }
 
     private static String getCurrentDateTime() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd h:mm a");
         return sdf.format(new java.util.Date());
     }
 }

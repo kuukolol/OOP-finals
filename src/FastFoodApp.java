@@ -20,52 +20,42 @@ public class FastFoodApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // Create UI elements
         VBox mainLayout = new VBox(20);
         mainLayout.setPadding(new Insets(20));
         mainLayout.setStyle("-fx-background-color: #f3f3f3;");
 
-        // Title with Emojis
-        Label title = new Label("🍔 NIOT Fast Food Ordering 🍟🥤");
+        Label title = new Label("NIOT Fast Food Ordering");
         title.setFont(Font.font("Arial", 32));
         title.setStyle("-fx-font-weight: bold; -fx-text-fill: #2c3e50;");
         mainLayout.getChildren().add(title);
 
-        // Create category buttons with Emojis
         HBox categoryButtons = new HBox(20);
-        Button burgerButton = createCategoryButton("Burgers 🍔");
-        Button chickenButton = createCategoryButton("Chicken 🍗");
-        Button drinkButton = createCategoryButton("Drinks 🥤");
+        Button burgerButton = createCategoryButton("Burgers");
+        Button chickenButton = createCategoryButton("Chicken");
+        Button drinkButton = createCategoryButton("Drinks");
         categoryButtons.getChildren().addAll(burgerButton, chickenButton, drinkButton);
 
-        // Create an item list for selected category
         ListView<String> itemList = new ListView<>();
         itemList.setPrefHeight(300);
         itemList.setStyle("-fx-background-color: #ffffff; -fx-border-radius: 5px; -fx-border-color: #ddd;");
 
-        // Create order summary area with Emoji
         VBox orderSummary = new VBox(10);
-        Label orderSummaryLabel = new Label("🛍️ Order Summary:");
-        orderSummaryLabel.setFont(Font.font("Arial", 18));
         orderSummary.setPadding(new Insets(10));
         orderSummary.setStyle("-fx-background-color: #ffffff; -fx-border-radius: 5px; -fx-border-color: #ddd;");
         orderSummary.setMinHeight(400);
         orderSummary.setMinWidth(500);
-        orderSummary.getChildren().addAll(orderSummaryLabel, cartItemsContainer);
+        orderSummary.getChildren().addAll(new Label("Order Summary:"), cartItemsContainer);
 
-        // Checkout button with Emoji
-        Button checkoutButton = new Button("Checkout 🛒");
+        Button checkoutButton = new Button("Checkout");
         checkoutButton.setStyle(
                 "-fx-font-size: 16px; -fx-padding: 12px; -fx-background-color: #2ecc71; -fx-text-fill: white; -fx-border-radius: 8px;");
         checkoutButton.setMaxWidth(Double.MAX_VALUE);
         checkoutButton.setOnAction(e -> Checkout.showReceipt(cart, burgersCategory, chickensCategory, drinksCategory));
 
-        // Add event handlers for category buttons
         burgerButton.setOnAction(e -> updateItemList(itemList, "Burgers"));
         chickenButton.setOnAction(e -> updateItemList(itemList, "Chicken"));
         drinkButton.setOnAction(e -> updateItemList(itemList, "Drinks"));
 
-        // Add event handler for item selection
         itemList.setOnMouseClicked(event -> {
             String selectedItem = itemList.getSelectionModel().getSelectedItem();
             if (selectedItem != null) {
@@ -80,10 +70,9 @@ public class FastFoodApp extends Application {
         mainLayout.getChildren().addAll(categoryButtons, content, checkoutButton);
 
         Scene scene = new Scene(mainLayout, 1100, 700);
-        primaryStage.setTitle("🍔 NIOT Fast Food Ordering 🍟🥤");
+        primaryStage.setTitle("NIOT Fast Food Ordering");
         primaryStage.setScene(scene);
         primaryStage.show();
-
     }
 
     private Button createCategoryButton(String category) {
@@ -115,8 +104,6 @@ public class FastFoodApp extends Application {
                     itemList.getItems().add(item.toString());
                 }
                 break;
-            default:
-                break;
         }
     }
 
@@ -126,12 +113,7 @@ public class FastFoodApp extends Application {
             return;
 
         String name = parts[0];
-        double price;
-        try {
-            price = Double.parseDouble(parts[1]);
-        } catch (NumberFormatException e) {
-            price = 0.0;
-        }
+        double price = Double.parseDouble(parts[1]);
 
         if (cart.containsKey(name)) {
             cart.get(name).increaseQuantity();
@@ -143,9 +125,10 @@ public class FastFoodApp extends Application {
     private void removeItemFromOrder(String itemName) {
         if (cart.containsKey(itemName)) {
             CartItem cartItem = cart.get(itemName);
-            cartItem.decreaseQuantity();
-            if (cartItem.getQuantity() == 0) {
+            if (cartItem.getQuantity() == 1) {
                 cart.remove(itemName);
+            } else {
+                cartItem.decreaseQuantity();
             }
         }
     }
@@ -165,7 +148,7 @@ public class FastFoodApp extends Application {
                 itemLabel.setText(itemLabel.getText() + " x" + cartItem.getQuantity());
             }
 
-            Button removeButton = new Button("❌");
+            Button removeButton = new Button("X");
             removeButton.setStyle(
                     "-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-border-radius: 5px; -fx-font-size: 14px;");
             removeButton.setOnAction(e -> {

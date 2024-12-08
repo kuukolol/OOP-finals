@@ -113,7 +113,6 @@ niot-fastfood-app/
 │   └── MenuCategory.java
 │
 ├── screenshots/
-│   ├── banner.png
 │   ├── main_interface.png
 │   ├── adding_items.png
 │   ├── order_summary.png
